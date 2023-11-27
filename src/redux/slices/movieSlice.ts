@@ -31,14 +31,18 @@ const getAll=createAsyncThunk<IMovies,void>(
 const movieSlice=createSlice({
     name:'movieSlice',
     initialState,
-    reducers:{}
+    reducers:{},
+    extraReducers:builder => builder.addCase(getAll.fulfilled,(state, action)=>{
+        state.movies=action.payload.results
+    })
 })
 
 
 const {reducer:movieReducer,actions} = movieSlice;
 
 const movieActions={
-    ...actions
+    ...actions,
+    getAll
 }
 
 export {
