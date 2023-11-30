@@ -2,7 +2,9 @@ import React, {useEffect} from 'react';
 import {useAppDispatch, useAppSelector} from "../../hooks";
 import {genreActions} from "../../redux";
 import {useParams} from "react-router-dom";
+
 import {GenreListedMovie} from "./GenreListedMovie";
+import css from './GenreListedMovies.module.css'
 
 const GenreListedMovies = () => {
 
@@ -21,11 +23,13 @@ const GenreListedMovies = () => {
         dispatch(genreActions.setPage(page-1))
     }
     return (
-        <div>
+        <div className={css.mainDiv}>
             {movies.map(movie=><GenreListedMovie key={movie.id} movie={movie}/>)}
+            <div className={css.buttonDiv}>
             <button disabled={page===1} onClick={prevPage}>Prev Page</button>
-            <div>Current Page:{page}</div>
+            <div className={css.pageDiv}>Current Page:{page}</div>
             <button onClick={nextPage}>Next Page</button>
+            </div>
         </div>
     );
 };

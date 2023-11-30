@@ -1,0 +1,85 @@
+.detailsDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: whitesmoke;
+}
+.detailsDiv img{
+    width: 40%;
+    border-radius: 20px;
+}
+.imgDiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+}
+.infoDiv{
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    padding: 5px;
+    width: 60%;
+}
+.infoDiv div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+    padding: 10px;
+    border: #294D61 2px solid;
+    border-radius: 10px;
+    background-color: #072e33;
+    height: 10%;
+}
+.titleDiv{
+    font-size: 30px;
+}
+.overviewDiv{
+    font-size: 20px;
+}
+.infoBudgRelPopDiv{
+    font-size: 25px;
+}
+.genreDiv{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    border: #072E33 2px solid;
+    border-radius: 10px;
+    width: 70%;
+    font-size: 25px;
+    background-color: #072e33;
+}
+.genreDiv div div{
+    border-radius: 10px;
+    border: #294D61 2px solid;
+    padding: 10px;
+    margin: 10px;
+}
+
+.companyDiv{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #072e33;
+    margin: 20px;
+    border-radius: 10px;
+    padding: 10px;
+}
+.languageDiv{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 50%;
+    background-color: #072e33;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}

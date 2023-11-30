@@ -1,7 +1,10 @@
 import React, {FC} from 'react';
+import {useNavigate} from "react-router-dom";
+
 import {IMovie} from "../../interfaces";
 import {imgURL} from "../../urls";
-import {useNavigate} from "react-router-dom";
+import css from './GenreListedMovie.module.css'
+import StarRatings from "react-star-ratings";
 
 interface IProps{
     movie:IMovie
@@ -9,13 +12,16 @@ interface IProps{
 
 const GenreListedMovie:FC<IProps> = ({movie}) => {
     const navigate=useNavigate()
-    const {id,title,overview,release_date,poster_path}=movie
+    const {id,title,poster_path,vote_average}=movie
     return (
-        <div onClick={()=>navigate(`movies/${id}`)}>
-            <div>{title}</div>
+        <div className={css.oneMovieDiv} onClick={()=>navigate(`movies/${id}`)}>
             <div><img src={imgURL+poster_path} alt={title}/></div>
-            <div>{overview}</div>
-            <div>{release_date}</div>
+            <div className={css.titleDiv}>{title}</div>
+            <StarRatings
+                rating={vote_average/2}
+                starDimension="20px"
+                starRatedColor="orange"
+            />
         </div>
     );
 };

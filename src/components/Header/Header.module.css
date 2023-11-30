@@ -1,0 +1,52 @@
+.header{
+    display: flex;
+    flex-direction: row;
+    background-color: #294D61 ;
+    font-size: 25px;
+    justify-content: space-around;
+    align-items: center;
+    height: 10vh;
+    border-radius: 15px;
+    margin: 0 5px 5px 5px;
+    box-shadow: #05161A;
+
+}
+.header a{
+    text-decoration: none;
+    color: black;
+}
+.header a:active{
+    color: whitesmoke;
+}
+.userDiv{
+    height: 6vh;
+    width: 4vw;
+    background-color: whitesmoke;
+    border-radius: 60%;
+}
+.buttonThemeLight{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 4vh;
+    width: 7vw;
+    border-radius: 30px;
+    background-color: black;
+    box-shadow:10px 10px 10px #072E33 ;
+    font-size: 20px;
+    color: whitesmoke;
+    opacity: 1;
+}
+.buttonThemeDark{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 4vh;
+    width: 7vw;
+    border-radius: 30px;
+    background-color: white;
+    box-shadow:10px 10px 10px #072E33 ;
+    font-size: 20px;
+    color: black;
+    opacity: 1;
+}

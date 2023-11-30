@@ -1,7 +1,9 @@
 import React, {useEffect} from 'react';
 import {useAppDispatch, useAppSelector} from "../../hooks";
 import {genreActions} from "../../redux";
+
 import {Genre} from "./Genre";
+import css from './Genres.module.css'
 
 const Genres = () => {
 
@@ -12,7 +14,7 @@ const Genres = () => {
         dispatch(genreActions.getAll())
     },[dispatch])
     return (
-        <div>
+        <div className={css.bigDiv}>
             {genres.map(genre=><Genre key={genre.id} genre={genre}/>)}
         </div>
     );

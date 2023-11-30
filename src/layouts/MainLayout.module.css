@@ -1,0 +1,12 @@
+.lightTheme {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.darkTheme {
+    background-color: #000000;
+    color: #ffffff;
+}
+body{
+    margin: 0;
+}

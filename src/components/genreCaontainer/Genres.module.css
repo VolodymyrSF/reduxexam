@@ -1,0 +1,9 @@
+.bigDiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    flex-wrap: wrap;
+    height: 110%;
+}

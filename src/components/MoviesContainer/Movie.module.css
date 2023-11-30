@@ -1,0 +1,33 @@
+.mainDiv{
+    display: flex;
+    flex-direction: column;
+    width: calc(25% - 10px);
+    height: 20%;
+    margin: 5px;
+
+}
+.movieDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #072E33;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 25px;
+    box-shadow:10px 10px 10px #072E33 ;
+    opacity: 1
+}
+.movieDiv:hover{
+    opacity: 0.8;
+}
+.movieDiv img{
+    height: 75%;
+    width: 85%;
+    margin: 5px;
+    border-radius: 25px;
+}
+.titleDiv{
+    color: ghostwhite;
+    margin: 5px;
+    font-size: 20px;
+}

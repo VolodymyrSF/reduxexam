@@ -7,7 +7,6 @@ const MoviesPage = () => {
     return (
         <div>
             <Outlet/>
-            <hr/>
             <Movies/>
         </div>
     );
