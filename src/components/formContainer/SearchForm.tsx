@@ -5,39 +5,54 @@ import {IQuery} from "../../interfaces";
 import {searchActions} from "../../redux";
 import {SearchedMovies} from "./SearchedMovies";
 import css from '../MoviesContainer/Movies.module.css'
-import {useEffect} from "react";
+import { useEffect, useRef} from "react";
+
 interface IProps{
     title:string
+    searchTitle:string
 }
+
+
 const SearchForm = () => {
     const{reset,register,handleSubmit}  = useForm<IQuery>({
         mode: "onBlur",
     });
 
-    const {page,movies,total_pages}=useAppSelector(state => state.search)
+    let {page,movies,total_pages}=useAppSelector(state => state.search)
 
     const dispatch = useAppDispatch();
 
-    const search:SubmitHandler<IProps>=async (data)=>{
-        await dispatch(searchActions.search({page:page,query:data.title}))
-    }
-//Ось цю частину доробити
-    // useEffect(()=>{
-    //     dispatch(searchActions.search({page,query:''}))
-    // },[page,dispatch])
-    const nextPage=()=>{
-        dispatch(searchActions.setPage(page+1))
-    }
-    const prevPage=()=>{
-        dispatch(searchActions.setPage(page-1))
+    const searchTitleRef = useRef<string>("");
 
+    const search:SubmitHandler<IProps>=async (data)=>{
+        searchTitleRef.current = data.title;
+            await dispatch(searchActions.search({page:1,query:data.title}))
+        reset()
     }
-console.log(total_pages)
+
+    const nextPage=async ()=>{
+        const nextPage=page+1
+       await dispatch(searchActions.setPage(nextPage))
+        reset()
+    }
+    const prevPage=async ()=>{
+        const prevPage=page-1
+        await dispatch(searchActions.setPage(prevPage))
+        reset()
+    }
+
+    useEffect(()=>{
+        const newSearchResults=async ()=>{
+            await dispatch(searchActions.search({page:page,query:searchTitleRef.current}))
+        }
+        newSearchResults()
+    },[page,searchTitleRef,dispatch])
+
     return (
         <div>
         <form onSubmit={handleSubmit(search)} className={css.formDiv}>
             <input type={'text'} placeholder={'Введіть назву фільму'} {...register('title')} />
-            <button type="submit">Search</button>
+            <button  type="submit">Search</button>
         </form>
             <div className={css.mainDiv}>
                 <h1>Searched Movies</h1>

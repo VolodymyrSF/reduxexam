@@ -7,7 +7,7 @@ interface IProps{
     companie:ICompanies
 }
 const ProductionCompanies:FC<IProps> = ({companie}) => {
-    const {logo_path,name,origin_country}=companie
+    const {logo_path,name}=companie
     return (
         <div className={css.bigDiv}>
             {logo_path ?(

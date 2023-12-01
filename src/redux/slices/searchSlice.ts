@@ -7,21 +7,19 @@ interface IState{
     page:null|number
     movies:IMovie[]
     total_pages:number
-    trigger:boolean
 }
 
 const initialState:IState={
     page:null,
     movies:[],
-    total_pages:null,
-    trigger:null
+    total_pages:null
 }
 
 const search=createAsyncThunk<IMovies,{page:number,query: string}>(
     'searchSlice/search',
-    async ({page,query=''},{rejectWithValue})=>{
+    async ({query,page},{rejectWithValue})=>{
         try {
-            const {data}=await searchService.getSearch({page,query})
+            const {data}=await searchService.getSearch({query,page})
             return data
         }catch (e) {
             const error = e as AxiosError
@@ -42,10 +40,12 @@ const searchSlice = createSlice({
             state.movies=action.payload.results
             state.page=action.payload.page
             state.total_pages=action.payload.total_pages
+
         })
         .addCase(setPage,(state, action)=>{
             state.page=action.payload
         })
+
 
 });
 

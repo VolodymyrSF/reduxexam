@@ -1,3 +1,4 @@
+
 .bigDiv{
     display: flex;
     flex-direction: row;
@@ -5,5 +6,5 @@
     overflow-x: hidden;
     overflow-y: hidden;
     flex-wrap: wrap;
-    height: 110%;
+    height: 88vh;
 }
