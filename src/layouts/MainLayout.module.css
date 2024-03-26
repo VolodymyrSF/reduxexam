@@ -1,11 +1,16 @@
 .lightTheme {
-    background-color: #ffffff;
     color: #000000;
+    background-color: #0093E9;
+    background-image: linear-gradient(75deg, #0093E9 0%, #80D0C7 50%, #16da98 100%);
+
+
 }
 
 .darkTheme {
-    background-color: #000000;
     color: #ffffff;
+    background-color: #06080e;
+    background-image: linear-gradient(43deg, #06080e 0%, #3b2239 46%, #2b4c3f 100%);
+
 }
 body{
     margin: 0;

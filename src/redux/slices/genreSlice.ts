@@ -1,5 +1,6 @@
 import {createAction, createAsyncThunk, createSlice} from "@reduxjs/toolkit";
-import {IGenre, IGenres} from "../../interfaces/genreInterface";
+
+import {IGenre, IGenres} from "../../interfaces";
 import {genreService} from "../../services";
 import {AxiosError} from "axios";
 import {IMovie, IMovies} from "../../interfaces";

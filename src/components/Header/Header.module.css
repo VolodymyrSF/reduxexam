@@ -1,7 +1,7 @@
 .header{
     display: flex;
     flex-direction: row;
-    background-color: #294D61 ;
+    background-color: #496989 ;
     font-size: 25px;
     justify-content: space-around;
     align-items: center;
@@ -37,6 +37,7 @@
     color: whitesmoke;
     opacity: 1;
 }
+
 .buttonThemeDark{
     display: flex;
     align-items: center;

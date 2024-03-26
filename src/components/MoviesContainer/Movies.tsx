@@ -13,9 +13,17 @@ const Movies = () => {
     },[page,dispatch])
     const nextPage=()=>{
         dispatch(movieActions.setPage(page+1))
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
     }
     const prevPage=()=>{
         dispatch(movieActions.setPage(page-1))
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
     }
 
     return (

@@ -24,7 +24,7 @@ const SearchForm = () => {
 
     const searchTitleRef = useRef<string>("");
 
-    const search:SubmitHandler<IProps>=async (data)=>{
+    const search:SubmitHandler<{title:string}>=async (data)=>{
         searchTitleRef.current = data.title;
             await dispatch(searchActions.search({page:1,query:data.title}))
         reset()
@@ -33,11 +33,19 @@ const SearchForm = () => {
     const nextPage=async ()=>{
         const nextPage=page+1
        await dispatch(searchActions.setPage(nextPage))
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
         reset()
     }
     const prevPage=async ()=>{
         const prevPage=page-1
         await dispatch(searchActions.setPage(prevPage))
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth' // Додає плавність прокрутки
+        });
         reset()
     }
 

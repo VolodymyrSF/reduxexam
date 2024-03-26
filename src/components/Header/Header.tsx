@@ -19,7 +19,7 @@ const Header = () => {
             <NavLink to={'movie'}>Movies</NavLink>
             <NavLink to={'genre'}>Genres</NavLink>
             <NavLink to={'movie/search'}>Search</NavLink>
-            <button onClick={changeTheme} className={currentTheme === 'light' ? css.buttonThemeLight : css.buttonThemeDark}>ChangeTheme</button>
+            <button onClick={changeTheme} className={currentTheme === 'light' ? css.buttonThemeLight : css.buttonThemeDark}>{currentTheme === 'light' ? 'Dark' : 'Light'}</button>
             <img src={userImgURL} alt={'user'} className={css.userDiv}/>
         </div>
     );

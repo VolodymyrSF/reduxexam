@@ -18,9 +18,17 @@ const GenreListedMovies = () => {
 
     const nextPage=()=>{
         dispatch(genreActions.setPage(page+1))
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
     }
     const prevPage=()=>{
         dispatch(genreActions.setPage(page-1))
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
     }
     return (
         <div className={css.mainDiv}>
